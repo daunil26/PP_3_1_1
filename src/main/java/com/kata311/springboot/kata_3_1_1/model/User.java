@@ -9,7 +9,7 @@ public class User {
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private int id;
+   private long id;
 
    @Column(name = "name")
    private String firstName;
@@ -28,7 +28,7 @@ public class User {
       this.email = email;
    }
 
-   public int getId() {
+   public long getId() {
       return id;
    }
 
@@ -70,6 +70,6 @@ public class User {
 
    @Override
    public int hashCode() {
-      return 31 * Integer.hashCode(id) * (firstName.hashCode() + lastName.hashCode() + email.hashCode());
+      return 31 * Long.hashCode(id) * (firstName.hashCode() + lastName.hashCode() + email.hashCode());
    }
 }

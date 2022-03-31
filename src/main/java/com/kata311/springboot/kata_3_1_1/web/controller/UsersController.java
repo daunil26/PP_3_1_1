@@ -3,7 +3,6 @@ package com.kata311.springboot.kata_3_1_1.web.controller;
 import com.kata311.springboot.kata_3_1_1.model.User;
 import com.kata311.springboot.kata_3_1_1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -48,7 +47,7 @@ public class UsersController {
 
     @PostMapping("/{id}")
     public String update(@ModelAttribute("user") User user, @PathVariable("id") int id) {
-        userService.add(user);
+        userService.updateUser(user);
         return "redirect:/users";
     }
 
